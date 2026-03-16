@@ -1,236 +1,203 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP Diffusion – Solutions industrielles</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP Diffusion – Solutions industrielles</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #1A1A1A;
+      color: #F0F0F0;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #F5F5F5;
-            color: #1E1E1E;
-        }
+    :root {
+      --bleu-clair: #4DB8FF;
+      --bleu-hover: #0077B6;
+      --fond-sombre: #1A1A1A;
+      --texte-blanc: #F0F0F0;
+    }
 
-        /* PALETTE 3 */
-        :root {
-            --bleu-petrole: #005F73;
-            --bleu-profond: #0A3A4A;
-            --orange-securite: #EE9B00;
-            --gris-clair: #F5F5F5;
-            --texte-noir: #1E1E1E;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #111;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        /* HEADER */
-        header {
-            background: white;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    .logo img {
+      height: 60px;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+    .contact-top {
+      text-align: right;
+      font-size: 15px;
+      line-height: 1.4;
+    }
 
-        .logo img {
-            height: 60px;
-        }
+    .contact-top a {
+      color: var(--bleu-clair);
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-        .logo-text {
-            font-size: 26px;
-            font-weight: bold;
-            color: var(--bleu-petrole);
-        }
+    .hero {
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: #1A1A1A;
+    }
 
-        .contact-top {
-            text-align: right;
-            font-size: 15px;
-            line-height: 1.4;
-        }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
 
-        .contact-top a {
-            color: var(--bleu-petrole);
-            text-decoration: none;
-            font-weight: 600;
-        }
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 10px;
+      background: var(--bleu-clair);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
 
-        /* HERO */
-        .hero {
-            height: 65vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(to bottom right, var(--bleu-petrole), var(--bleu-profond));
-            color: white;
-        }
+    .btn:hover {
+      background: var(--bleu-hover);
+    }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-        }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: var(--bleu-clair);
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 15px 25px;
-            margin: 10px;
-            background: var(--orange-securite);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-        .btn:hover {
-            background: #c97f00;
-        }
+    .service {
+      background: #222;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      border-left: 6px solid var(--bleu-clair);
+    }
 
-        /* SECTIONS */
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 32px;
-            color: var(--bleu-profond);
-        }
+    .gallery div {
+      background: #333;
+      height: 180px;
+      border-radius: 10px;
+    }
 
-        /* SERVICES */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .service {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            text-align: center;
-            font-size: 18px;
-            font-weight: 600;
-            border-left: 6px solid var(--orange-securite);
-        }
-
-        /* GALERIE */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery div {
-            background: #ddd;
-            height: 180px;
-            border-radius: 10px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--bleu-profond);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-    </style>
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="assets/logo.png" alt="Logo MP Diffusion">
-            <div class="logo-text">MP DIFFUSION</div>
-        </div>
-
-        <div class="contact-top">
-            <a href="tel:+33612345678">📞 06 12 34 56 78</a><br>
-            <a href="mailto:contact@mpdiffusion.fr">📧 contact@mpdiffusion.fr</a>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <div class="hero">
-        <h1>MP DIFFUSION</h1>
-        <p>Chaudronnerie – Tuyauterie – Soudure Inox – Solutions industrielles</p>
-
-        <a class="btn" href="mailto:contact@mpdiffusion.fr">Envoyer un email</a>
-        <a class="btn" href="tel:+33612345678">Appeler</a>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo MP Diffusion">
     </div>
+    <div class="contact-top">
+      📞 <a href="tel:+33612345678">06 12 34 56 78</a><br>
+      📧 <a href="mailto:contact@mpdiffusion.fr">contact@mpdiffusion.fr</a>
+    </div>
+  </header>
 
-    <!-- SERVICES -->
-    <section id="services">
-        <h2>Nos Services</h2>
-        <div class="services">
-            <div class="service">Chaudronnerie</div>
-            <div class="service">Tuyauterie industrielle</div>
-            <div class="service">Soudure Inox</div>
-            <div class="service">Fabrication sur mesure</div>
-            <div class="service">Solution industrielle</div>
-        </div>
-    </section>
+  <!-- HERO -->
+  <div class="hero">
+    <p>Chaudronnerie – Tuyauterie – Soudure Inox – Solutions industrielles</p>
+    <a class="btn" href="mailto:contact@mpdiffusion.fr">Envoyer un email</a>
+    <a class="btn" href="tel:+33612345678">Appeler</a>
+  </div>
 
-    <!-- GALERIE -->
-    <section id="realisations">
-        <h2>Réalisations</h2>
-        <div class="gallery">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </section>
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Nos Services</h2>
+    <div class="services">
+      <div class="service">Chaudronnerie</div>
+      <div class="service">Tuyauterie industrielle</div>
+      <div class="service">Soudure Inox</div>
+      <div class="service">Fabrication sur mesure</div>
+      <div class="service">Maintenance industrielle</div>
+    </div>
+  </section>
 
-    <!-- A PROPOS -->
-    <section id="apropos">
-        <h2>À propos</h2>
-        <p style="max-width: 700px; margin: auto; text-align: center;">
-            MP Diffusion accompagne les entreprises industrielles dans leurs besoins en chaudronnerie, tuyauterie et soudure inox.
-            Expertise, réactivité et qualité sont au cœur de notre savoir‑faire.
-        </p>
-    </section>
+  <!-- GALERIE -->
+  <section id="realisations">
+    <h2>Réalisations</h2>
+    <div class="gallery">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p style="text-align:center;">📍 Basé en Nouvelle‑Aquitaine</p>
-        <p style="text-align:center;">🕒 Lundi – Vendredi : 8h – 18h</p>
+  <!-- A PROPOS -->
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+      MP Diffusion accompagne les entreprises industrielles dans leurs besoins en chaudronnerie, tuyauterie et soudure inox.
+      Expertise, réactivité et qualité sont au cœur de notre savoir‑faire.
+    </p>
+  </section>
 
-        <div style="text-align:center; margin-top:20px;">
-            <a class="btn" href="mailto:contact@mpdiffusion.fr">Envoyer un email</a>
-            <a class="btn" href="tel:+33612345678">Appeler</a>
-        </div>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">📍 Basé en Nouvelle‑Aquitaine</p>
+    <p style="text-align:center;">🕒 Lundi – Vendredi : 8h – 12h / 13h – 17h</p>
+    <div style="text-align:center; margin-top:20px;">
+      <a class="btn" href="mailto:contact@mpdiffusion.fr">Envoyer un email</a>
+      <a class="btn" href="tel:+33612345678">Appeler</a>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-        © 2026 MP Diffusion — Tous droits réservés
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 MP Diffusion — Tous droits réservés
+  </footer>
 
 </body>
 </html>
