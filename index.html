@@ -25,7 +25,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background: #000;
+      background: #000; /* inchangé */
       box-shadow: 0 2px 10px rgba(0,0,0,0.6);
       position: sticky;
       top: 0;
@@ -34,7 +34,7 @@
 
     .logo img {
       height: 60px;
-      filter: none; /* Glow retiré */
+      filter: drop-shadow(0 0 4px #4DB8FF); /* glow conservé */
     }
 
     .contact-top {
@@ -51,7 +51,7 @@
 
     /* HERO */
     .hero {
-      height: 45vh; /* réduit pour éviter trop de vide */
+      height: 45vh; /* réduit */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -85,7 +85,7 @@
 
     /* SECTIONS */
     section {
-      padding: 25px 20px; /* réduit l’espace vertical */
+      padding: 25px 20px; /* réduit */
       max-width: 1100px;
       margin: auto;
     }
@@ -133,7 +133,7 @@
       background: #111;
       color: #ccc;
       text-align: center;
-      padding: 20px; /* réduit */
+      padding: 25px;
       margin-top: 20px;
       font-size: 14px;
     }
